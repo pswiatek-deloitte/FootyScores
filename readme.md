@@ -41,3 +41,29 @@ The goal of this task is to design a solution that supports automated API testin
 ## Submission Requirements
 
 Please create a repository containing your solution and include clear instructions on how to install, run, and deploy the code. Please submit your work by sharing a GitHub repository link.
+
+## Development setup
+
+This project uses TypeScript with Node.js 22 or newer and npm.
+
+```bash
+npm ci
+npm run check
+```
+
+The `check` command runs formatting verification, ESLint, TypeScript
+type-checking, the test suite, and a production build.
+
+Useful local commands:
+
+```bash
+npm run dev
+npm run test:watch
+npm run build
+npm start
+```
+
+Source code belongs in `src/`, tests belong in `test/`, and generated files are
+written to `dist/`. Automated tests must use offline fixtures rather than the
+live Olympic schedule. The schedule URL remains the authoritative source for
+refreshing or validating fixture data.

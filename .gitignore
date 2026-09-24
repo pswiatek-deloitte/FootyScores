@@ -32,6 +32,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+.eslintcache
+.npm
+*.tsbuildinfo
 
 # Python
 __pycache__/
@@ -45,4 +48,3 @@ env/
 
 # Java
 *.class
-

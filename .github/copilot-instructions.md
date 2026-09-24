@@ -11,6 +11,19 @@ Olympic Games. The official competition schedule is the source of truth:
 Before making changes, read `readme.md` and `example.json`. Treat the
 assignment acceptance criteria as requirements, not suggestions.
 
+## Runtime and repository layout
+
+- The implementation uses TypeScript in ESM mode on Node.js 22 or newer, with
+  npm as the package manager.
+- Production code belongs in `src/`; tests belong in `test/`; compiled output
+  is generated in `dist/` and must not be edited by hand.
+- Run `npm ci` after cloning, then use `npm run check` before submitting a
+  change. The check includes formatting, linting, type-checking, tests, and a
+  production build.
+- Keep the CLI entry point small. Put schedule acquisition, parsing,
+  normalization, filtering, and endpoint rendering in independently testable
+  modules.
+
 ## Working rules
 
 - Inspect the repository and existing conventions before proposing a design.
@@ -67,4 +80,3 @@ Keep `readme.md` current with installation, CLI usage, source provenance,
 output examples, deterministic ordering, assumptions, testing, and deployment
 instructions. Explain meaningful trade-offs so another engineer can defend
 the implementation without relying on the AI conversation.
-
