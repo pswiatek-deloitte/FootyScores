@@ -55,9 +55,13 @@ assignment acceptance criteria as requirements, not suggestions.
 - Deduplicate by the canonical match identity before rendering endpoints.
 - Keep diagnostics off standard output when standard output is the endpoint
   stream. Use a non-zero exit code for invalid input or incomplete output.
+- The current endpoint convention is
+  `/api/matches/{competition}/{local-kickoff}/{home}-vs-{away}`. The
+  competition is `Paris 2024`, the kickoff is the source-local
+  `YYYY-MM-DD-HHmm`, and names are normalized to lowercase URL segments.
 - `example.json` is a match-shaped JSON example rather than an explicit URL
-  specification. Reconcile this distinction with the API contract in the
-  implementation and explain the mapping in the documentation.
+  specification. Keep endpoint generation separate from the richer match
+  response model and explain the mapping in the documentation.
 
 ## Testing and reproducibility
 

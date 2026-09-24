@@ -1,0 +1,48 @@
+{
+  "schedules": [
+    {
+      "code": "FBLWTEAM11------------GPC-000100--",
+      "startDate": "2024-07-25T17:00:00+02:00",
+      "start": [
+        { "participant": { "name": "Spain" } },
+        { "participant": { "name": "Japan" } }
+      ],
+      "location": { "description": "La Beaujoire Stadium, Nantes" },
+      "status": { "code": "FINISHED" }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000400--",
+      "startDate": "2024-07-25T16:00:00-04:00",
+      "start": [
+        { "participant": { "name": "United States" } },
+        { "participant": { "name": "Germany" } }
+      ],
+      "location": { "description": "Marseille Stadium, Marseille" },
+      "status": { "code": "FINISHED" }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000100--",
+      "startDate": "2024-07-25T17:00:00+02:00",
+      "start": [
+        { "participant": { "name": "Spain" } },
+        { "participant": { "name": "Japan" } }
+      ],
+      "location": { "description": "La Beaujoire Stadium, Nantes" },
+      "status": { "code": "FINISHED" }
+    },
+    {
+      "code": "FBLMTEAM11------------VICTMEDAL---",
+      "status": { "code": "RESCHEDULED" }
+    },
+    {
+      "code": "ATHMTEAM11------------100100--",
+      "startDate": "2024-07-25T10:00:00+02:00",
+      "start": [
+        { "participant": { "name": "Runner A" } },
+        { "participant": { "name": "Runner B" } }
+      ],
+      "location": { "description": "Stade de France, Paris" },
+      "status": { "code": "FINISHED" }
+    }
+  ]
+}

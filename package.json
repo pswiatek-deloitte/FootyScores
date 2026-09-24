@@ -16,6 +16,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx src/cli.ts",
+    "generate": "tsx src/cli.ts",
+    "generate:json": "tsx src/cli.ts --format json",
     "start": "node dist/cli.js",
     "test": "vitest run",
     "test:watch": "vitest",

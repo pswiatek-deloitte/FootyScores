@@ -55,8 +55,13 @@ recruitment assignment.
 
 ## Deterministic endpoint output
 
-- Derive the endpoint format from the API contract and `example.json`; do not
-  invent path segments or query parameters.
+- Use `/api/matches/{competition}/{local-kickoff}/{home}-vs-{away}`. For this
+  assignment, the competition segment is `paris-2024`, the kickoff segment is
+  the source-local `YYYY-MM-DD-HHmm`, and team names are lowercase,
+  diacritic-free URL segments.
+- Keep the endpoint format separate from the richer JSON match response shown
+  in `example.json`; the JSON sample documents match data, while the generated
+  output is the API path used to retrieve that data.
 - Make serialization stable: fixed field ordering where relevant, consistent
   escaping, and no timestamps or random values generated at runtime.
 - Sort by normalized UTC kickoff, then canonical match identity and documented
@@ -84,4 +89,3 @@ Cover at least:
 Do not claim complete schedule coverage from a unit test alone. Add a
 repeatable fixture-based smoke check that reports the number of accepted,
 excluded, duplicate, and invalid records.
-

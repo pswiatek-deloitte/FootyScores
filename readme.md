@@ -57,13 +57,46 @@ type-checking, the test suite, and a production build.
 Useful local commands:
 
 ```bash
-npm run dev
+npm run --silent dev
 npm run test:watch
 npm run build
-npm start
+node dist/cli.js
 ```
 
 Source code belongs in `src/`, tests belong in `test/`, and generated files are
 written to `dist/`. Automated tests must use offline fixtures rather than the
 live Olympic schedule. The schedule URL remains the authoritative source for
 refreshing or validating fixture data.
+
+## CLI output
+
+Running the CLI without `--input` retrieves the official football schedule
+feed used by the Olympic schedule page:
+
+```text
+https://stacy.olympics.com/OG2024/data/SCH_StartList~comp=OG2024~disc=FBL~lang=ENG.json
+```
+
+For repeatable local runs, provide a JSON fixture:
+
+```bash
+npm run --silent generate
+npm run --silent generate:json
+node dist/cli.js --input test/fixtures/schedule.json
+node dist/cli.js --input test/fixtures/schedule.json --format json
+```
+
+The default output is one endpoint per line. Endpoints use the documented
+format `/api/matches/{competition}/{local-kickoff}/{home}-vs-{away}`, for
+example:
+
+```text
+/api/matches/paris-2024/2024-07-25-1700/spain-vs-japan
+```
+
+The kickoff segment preserves the source's local date and time in
+`YYYY-MM-DD-HHmm` form. Records are sorted by their timezone-normalized
+kickoff, then by the stable Olympic match code. Non-football records,
+placeholder schedule rows without two participants, and exact duplicate
+records are excluded. Conflicting duplicates fail loudly instead of producing
+ambiguous endpoints.
