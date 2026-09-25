@@ -1,4 +1,5 @@
 # FootyScores reference endpoint generator
+[![CI](https://github.com/pswiatek-deloitte/FootyScores/actions/workflows/ci.yml/badge.svg)](https://github.com/pswiatek-deloitte/FootyScores/actions/workflows/ci.yml)
 
 This repository contains a deterministic TypeScript CLI for generating
 reference endpoints for every football match played at the Paris 2024 Olympic
