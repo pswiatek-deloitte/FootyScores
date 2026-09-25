@@ -8,8 +8,8 @@ Olympic Games. The official competition schedule is the source of truth:
 
 <https://stacy.olympics.com/en/paris-2024/competition-schedule>
 
-Before making changes, read `readme.md` and `example.json`. Treat the
-assignment acceptance criteria as requirements, not suggestions.
+Before making changes, read `task/readme.md` and `task/example.json`. Treat
+the assignment acceptance criteria as requirements, not suggestions.
 
 ## Runtime and repository layout
 
@@ -59,8 +59,8 @@ assignment acceptance criteria as requirements, not suggestions.
   `/api/matches/{competition}/{local-kickoff}/{home}-vs-{away}`. The
   competition is `Paris 2024`, the kickoff is the source-local
   `YYYY-MM-DD-HHmm`, and names are normalized to lowercase URL segments.
-- `example.json` is a match-shaped JSON example rather than an explicit URL
-  specification. Keep endpoint generation separate from the richer match
+- `task/example.json` is a match-shaped JSON example rather than an explicit
+  URL specification. Keep endpoint generation separate from the richer match
   response model and explain the mapping in the documentation. Detailed
   exports must include the stable match code, endpoint URL, and mapped `data`
   object.

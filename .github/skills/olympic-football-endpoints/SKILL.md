@@ -11,7 +11,7 @@ recruitment assignment.
 
 ## Required workflow
 
-1. Read `readme.md` and `example.json`, then inspect the repository's runtime,
+1. Read `task/readme.md` and `task/example.json`, then inspect the repository's runtime,
    dependency, test, and CI configuration before changing code.
 2. Write down the input shape, canonical match identity, output shape, sorting
    rule, and assumptions. Stop and resolve ambiguity rather than guessing.
@@ -21,9 +21,9 @@ recruitment assignment.
    - normalize a match into an internal model;
    - select football matches;
    - deduplicate and sort;
-   - render the endpoint in the required format.
+   - render the endpoint in the required format;
    - optionally fetch and map the official detailed result into the
-     `example.json` response shape.
+     `task/example.json` response shape.
 4. Test each stage with offline fixtures before testing the complete CLI.
 5. Update the README with the exact install, run, test, deployment, and data
    refresh commands.
@@ -62,7 +62,7 @@ recruitment assignment.
   the source-local `YYYY-MM-DD-HHmm`, and team names are lowercase,
   diacritic-free URL segments.
 - Keep the endpoint format separate from the richer JSON match response shown
-  in `example.json`; the JSON sample documents match data, while the generated
+  in `task/example.json`; the JSON sample documents match data, while the generated
   output is the API path used to retrieve that data.
 - For detailed references, emit a stable match code, `endpointURL`, and
   `data` object. Use the official `RES_ByRSC_H2H` feed and bounded concurrency.
