@@ -1,6 +1,8 @@
 import { readFile } from "node:fs/promises";
 import type { MatchMetadata } from "../domain/match.js";
 import { deduplicateAndSortMatches } from "../domain/match.js";
+import { fetchJson } from "./http.js";
+import { SourceDataError, asRecord, requiredString } from "./validation.js";
 
 export const OFFICIAL_SCHEDULE_PAGE_URL =
   "https://stacy.olympics.com/en/paris-2024/competition-schedule";
@@ -8,44 +10,13 @@ export const OFFICIAL_SCHEDULE_PAGE_URL =
 export const OFFICIAL_FOOTBALL_SCHEDULE_URL =
   "https://stacy.olympics.com/OG2024/data/SCH_StartList~comp=OG2024~disc=FBL~lang=ENG.json";
 
-export class ScheduleDataError extends Error {
-  public constructor(message: string) {
-    super(message);
-    this.name = "ScheduleDataError";
-  }
-}
+export { SourceDataError as ScheduleDataError };
 
 export async function fetchSchedulePayload(
   sourceUrl = OFFICIAL_FOOTBALL_SCHEDULE_URL,
   fetchImpl: typeof fetch = fetch,
 ): Promise<unknown> {
-  let response: Response;
-
-  try {
-    response = await fetchImpl(sourceUrl, {
-      headers: {
-        Accept: "application/json",
-      },
-    });
-  } catch (error) {
-    throw new Error(`Could not fetch schedule data from ${sourceUrl}`, {
-      cause: error,
-    });
-  }
-
-  if (!response.ok) {
-    throw new Error(
-      `Schedule request failed with HTTP ${response.status} ${response.statusText}`,
-    );
-  }
-
-  try {
-    return await response.json();
-  } catch (error) {
-    throw new Error(`Schedule response from ${sourceUrl} was not valid JSON`, {
-      cause: error,
-    });
-  }
+  return fetchJson(sourceUrl, fetchImpl);
 }
 
 export async function readSchedulePayload(inputPath: string): Promise<unknown> {
@@ -73,7 +44,7 @@ export function parseSchedulePayload(payload: unknown): MatchMetadata[] {
   const schedules = root["schedules"];
 
   if (!Array.isArray(schedules)) {
-    throw new ScheduleDataError(
+    throw new SourceDataError(
       'Schedule response must contain a "schedules" array',
     );
   }
@@ -91,7 +62,7 @@ export function parseSchedulePayload(payload: unknown): MatchMetadata[] {
   const normalizedMatches = deduplicateAndSortMatches(matches);
 
   if (normalizedMatches.length === 0) {
-    throw new ScheduleDataError(
+    throw new SourceDataError(
       "Schedule response contained no football matches",
     );
   }
@@ -174,7 +145,7 @@ function parseLocation(
   const separator = description.lastIndexOf(",");
 
   if (separator <= 0 || separator === description.length - 1) {
-    throw new ScheduleDataError(
+    throw new SourceDataError(
       `schedule record ${index + 1}.location.description must contain "venue, city"`,
     );
   }
@@ -187,7 +158,7 @@ function parseLocation(
 
 function parseKickoff(value: string, index: number): number {
   if (!/[zZ]|[+-]\d{2}:\d{2}$/.test(value)) {
-    throw new ScheduleDataError(
+    throw new SourceDataError(
       `schedule record ${index + 1}.startDate must include a timezone`,
     );
   }
@@ -195,26 +166,10 @@ function parseKickoff(value: string, index: number): number {
   const timestamp = Date.parse(value);
 
   if (Number.isNaN(timestamp)) {
-    throw new ScheduleDataError(
+    throw new SourceDataError(
       `schedule record ${index + 1}.startDate is not a valid date`,
     );
   }
 
   return timestamp;
-}
-
-function asRecord(value: unknown, context: string): Record<string, unknown> {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) {
-    throw new ScheduleDataError(`${context} must be an object`);
-  }
-
-  return value as Record<string, unknown>;
-}
-
-function requiredString(value: unknown, context: string): string {
-  if (typeof value !== "string" || value.trim().length === 0) {
-    throw new ScheduleDataError(`${context} must be a non-empty string`);
-  }
-
-  return value;
 }

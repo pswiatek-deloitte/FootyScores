@@ -1,0 +1,14 @@
+{
+  "schedules": [
+    {
+      "code": "FBLMTEAM11------------GPB-000100--",
+      "startDate": "2024-07-24T15:00:00+02:00",
+      "start": [
+        { "participant": { "name": "Argentina" } },
+        { "participant": { "name": "Morocco" } }
+      ],
+      "location": { "description": "Geoffroy-Guichard, St-Etienne" },
+      "status": { "code": "FINISHED" }
+    }
+  ]
+}

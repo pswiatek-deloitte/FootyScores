@@ -22,6 +22,8 @@ recruitment assignment.
    - select football matches;
    - deduplicate and sort;
    - render the endpoint in the required format.
+   - optionally fetch and map the official detailed result into the
+     `example.json` response shape.
 4. Test each stage with offline fixtures before testing the complete CLI.
 5. Update the README with the exact install, run, test, deployment, and data
    refresh commands.
@@ -62,6 +64,12 @@ recruitment assignment.
 - Keep the endpoint format separate from the richer JSON match response shown
   in `example.json`; the JSON sample documents match data, while the generated
   output is the API path used to retrieve that data.
+- For detailed references, emit a stable match code, `endpointURL`, and
+  `data` object. Use the official `RES_ByRSC_H2H` feed and bounded concurrency.
+- Document source limitations in the output contract. In this assignment,
+  non-penalty goal types fall back to `open_play`, own goals are assigned to
+  the opposing scoring team, shootout events use minute `120`, and missing
+  coaches use an explicit `Unknown` fallback after checking stand-in coaches.
 - Make serialization stable: fixed field ordering where relevant, consistent
   escaping, and no timestamps or random values generated at runtime.
 - Sort by normalized UTC kickoff, then canonical match identity and documented

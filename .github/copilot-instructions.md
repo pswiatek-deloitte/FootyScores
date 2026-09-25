@@ -21,8 +21,8 @@ assignment acceptance criteria as requirements, not suggestions.
   change. The check includes formatting, linting, type-checking, tests, and a
   production build.
 - Keep the CLI entry point small. Put schedule acquisition, parsing,
-  normalization, filtering, and endpoint rendering in independently testable
-  modules.
+  normalization, filtering, endpoint rendering, and detailed result mapping in
+  independently testable modules.
 
 ## Working rules
 
@@ -61,7 +61,15 @@ assignment acceptance criteria as requirements, not suggestions.
   `YYYY-MM-DD-HHmm`, and names are normalized to lowercase URL segments.
 - `example.json` is a match-shaped JSON example rather than an explicit URL
   specification. Keep endpoint generation separate from the richer match
-  response model and explain the mapping in the documentation.
+  response model and explain the mapping in the documentation. Detailed
+  exports must include the stable match code, endpoint URL, and mapped `data`
+  object.
+- Use the official `RES_ByRSC_H2H` result feed for detailed match data. Keep
+  detail requests behind the source adapter and limit concurrent requests.
+- When the result feed lacks a field, use an explicit documented fallback
+  rather than silently inventing a value. Current documented fallbacks include
+  `open_play` for unclassifiable non-penalty goals, minute `120` for shootout
+  events, and `Unknown` for an unavailable coach.
 
 ## Testing and reproducibility
 

@@ -1,0 +1,188 @@
+{
+  "results": {
+    "eventUnit": {
+      "description": "Men's Quarterfinal"
+    },
+    "periods": [
+      {
+        "p_code": "H1",
+        "home": { "score": "1" },
+        "away": { "score": "0" }
+      },
+      {
+        "p_code": "TOT",
+        "home": { "score": "2" },
+        "away": { "score": "1" }
+      }
+    ],
+    "items": [
+      {
+        "teamCode": "HOME",
+        "participant": { "name": "Home FC" },
+        "eventUnitEntries": [
+          { "eue_code": "FORMATION", "eue_value": "4-3-3" }
+        ],
+        "teamCoaches": [
+          {
+            "function": { "functionCode": "COACH" },
+            "coach": { "givenName": "Home", "familyName": "Coach" }
+          }
+        ],
+        "teamAthletes": [
+          {
+            "bib": "1",
+            "athlete": {
+              "code": "H1",
+              "givenName": "Home",
+              "familyName": "Keeper"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "STARTER", "eue_value": "Y" },
+              { "eue_code": "POSITION", "eue_value": "GK" }
+            ]
+          },
+          {
+            "bib": "8",
+            "athlete": {
+              "code": "H8",
+              "givenName": "Home",
+              "familyName": "Creator"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "STARTER", "eue_value": "Y" },
+              { "eue_code": "POSITION", "eue_value": "M35" }
+            ]
+          },
+          {
+            "bib": "9",
+            "athlete": {
+              "code": "H9",
+              "givenName": "Home",
+              "familyName": "Striker"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "POSITION", "eue_value": "F04" }
+            ]
+          },
+          {
+            "bib": "12",
+            "athlete": {
+              "code": "H12",
+              "givenName": "Home",
+              "familyName": "Substitute"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "POSITION", "eue_value": "FW" }
+            ]
+          }
+        ]
+      },
+      {
+        "teamCode": "AWAY",
+        "participant": { "name": "Away FC" },
+        "eventUnitEntries": [
+          { "eue_code": "FORMATION", "eue_value": "4-2-3-1" }
+        ],
+        "teamCoaches": [
+          {
+            "function": { "functionCode": "COACH" },
+            "coach": { "givenName": "Away", "familyName": "Coach" }
+          }
+        ],
+        "teamAthletes": [
+          {
+            "bib": "1",
+            "athlete": {
+              "code": "A1",
+              "givenName": "Away",
+              "familyName": "Keeper"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "STARTER", "eue_value": "Y" },
+              { "eue_code": "POSITION", "eue_value": "GK" }
+            ]
+          },
+          {
+            "bib": "9",
+            "athlete": {
+              "code": "A9",
+              "givenName": "Away",
+              "familyName": "Striker"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "STARTER", "eue_value": "Y" },
+              { "eue_code": "POSITION", "eue_value": "F04" }
+            ]
+          },
+          {
+            "bib": "14",
+            "athlete": {
+              "code": "A14",
+              "givenName": "Away",
+              "familyName": "Substitute"
+            },
+            "eventUnitEntries": [
+              { "eue_code": "POSITION", "eue_value": "FW" }
+            ]
+          }
+        ]
+      }
+    ],
+    "playByPlay": [
+      {
+        "actions": [
+          {
+            "pbpa_period": "H1",
+            "pbpa_order": 10001,
+            "pbpa_Action": "SHOT",
+            "pbpa_When": "18'",
+            "pbpa_Result": "GOAL",
+            "competitors": [
+              {
+                "pbpc_code": "HOME",
+                "athletes": [
+                  { "pbpat_code": "H9", "pbpat_role": "SCR" },
+                  { "pbpat_code": "H8", "pbpat_role": "ASSIST" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "pbpa_period": "H2",
+            "pbpa_order": 20001,
+            "pbpa_Action": "PENALTY",
+            "pbpa_When": "77'",
+            "pbpa_Result": "GOAL",
+            "competitors": [
+              {
+                "pbpc_code": "AWAY",
+                "athletes": [
+                  { "pbpat_code": "A9", "pbpat_role": "SCR" }
+                ]
+              }
+            ]
+          },
+          {
+            "pbpa_period": "H2",
+            "pbpa_order": 20002,
+            "pbpa_Action": "SHOT",
+            "pbpa_When": "90+3'",
+            "pbpa_Result": "GOAL",
+            "competitors": [
+              {
+                "pbpc_code": "HOME",
+                "athletes": [
+                  { "pbpat_code": "H9", "pbpat_role": "SCR" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

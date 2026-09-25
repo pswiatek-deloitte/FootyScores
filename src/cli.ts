@@ -8,6 +8,7 @@ import {
   parseSchedulePayload,
   readSchedulePayload,
 } from "./source/olympic-schedule.js";
+import { fetchMatchReferences } from "./source/olympic-match.js";
 
 export interface TextOutput {
   write(message: string): void;
@@ -19,6 +20,7 @@ Options:
   --input <path>   Read schedule JSON from a local file instead of the official source
   --source <url>   Override the official schedule JSON URL
   --format <type>  Output "lines" (default) or "json"
+  --details        Fetch full match data and output JSON references
   -h, --help       Show this help message
   -v, --version    Show the CLI version
 `;
@@ -27,6 +29,7 @@ interface CliOptions {
   readonly inputPath: string | undefined;
   readonly sourceUrl: string;
   readonly format: "lines" | "json";
+  readonly details: boolean;
 }
 
 type ParsedCommand =
@@ -36,10 +39,15 @@ type ParsedCommand =
 
 class CliUsageError extends Error {}
 
+export interface CliDependencies {
+  readonly fetchImpl?: typeof fetch;
+}
+
 export async function run(
   argv: readonly string[],
   stdout: TextOutput = process.stdout,
   stderr: TextOutput = process.stderr,
+  dependencies: CliDependencies = {},
 ): Promise<number> {
   try {
     const command = parseArguments(argv);
@@ -54,11 +62,19 @@ export async function run(
       return 0;
     }
 
+    const fetchImpl = dependencies.fetchImpl ?? fetch;
     const payload =
       command.options.inputPath === undefined
-        ? await fetchSchedulePayload(command.options.sourceUrl)
+        ? await fetchSchedulePayload(command.options.sourceUrl, fetchImpl)
         : await readSchedulePayload(command.options.inputPath);
     const matches = parseSchedulePayload(payload);
+
+    if (command.options.details) {
+      const references = await fetchMatchReferences(matches, fetchImpl);
+      stdout.write(`${JSON.stringify(references, null, 2)}\n`);
+      return 0;
+    }
+
     const endpoints = matches.map((match) => generateEndpoint(match));
 
     if (command.options.format === "json") {
@@ -87,6 +103,7 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
   let sourceUrl = OFFICIAL_FOOTBALL_SCHEDULE_URL;
   let sourceWasProvided = false;
   let format: CliOptions["format"] = "lines";
+  let details = false;
 
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
@@ -107,6 +124,8 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
 
       format = value;
       index += 1;
+    } else if (argument === "--details") {
+      details = true;
     } else {
       throw new CliUsageError(
         `Unknown option or argument: ${argument ?? "(missing argument)"}`,
@@ -118,12 +137,17 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
     throw new CliUsageError("--input and --source cannot be used together");
   }
 
+  if (details && format !== "json") {
+    throw new CliUsageError("--details requires --format json");
+  }
+
   return {
     kind: "run",
     options: {
       inputPath,
       sourceUrl,
       format,
+      details,
     },
   };
 }

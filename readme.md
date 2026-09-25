@@ -100,3 +100,56 @@ kickoff, then by the stable Olympic match code. Non-football records,
 placeholder schedule rows without two participants, and exact duplicate
 records are excluded. Conflicting duplicates fail loudly instead of producing
 ambiguous endpoints.
+
+## Detailed reference export
+
+The `--details` mode retrieves the official result feed for every normalized
+match and emits a JSON array containing the endpoint and the expected response
+data:
+
+```bash
+node dist/cli.js --details --format json > references.json
+npm run --silent generate:details > references.json
+node dist/cli.js --input test/fixtures/detail-schedule.json --details --format json
+```
+
+Each array item has this shape:
+
+```json
+{
+  "code": "FBLMTEAM11------------GPB-000100--",
+  "endpointURL": "/api/matches/paris-2024/2024-07-24-1500/argentina-vs-morocco",
+  "data": {
+    "competition": {},
+    "venue": {},
+    "kickoff": "2024-07-24T15:00:00+02:00",
+    "status": "FT",
+    "teams": {},
+    "score": {},
+    "scorers": [],
+    "lineups": {}
+  }
+}
+```
+
+The `data` object follows the structure in `example.json`, including
+`score.halfTime`, scorer assists, and home/away starting elevens and benches.
+Detailed requests use the official result feed:
+
+```text
+https://stacy.olympics.com/OG2024/data/RES_ByRSC_H2H~comp=OG2024~disc=FBL~rscResult={MATCH_CODE}~lang=ENG.json
+```
+
+Requests are limited to four concurrent match-detail fetches and references
+remain in the deterministic schedule order. A local `--input` replaces only
+the schedule request; detail mode still retrieves each match response from the
+official result feed.
+
+The result feed does not expose enough information to reliably distinguish
+headers from open-play goals, so non-penalty goals use the documented
+`open_play` fallback. `PEN` and `PENALTY` events map to `penalty`; own goals
+credit the recorded player while assigning the goal to the opposing team; and
+shootout events use minute `120`. Lineup position subcodes are normalized to
+common labels such as `GK`, `RB`, `CB`, `LB`, `CM`, `LW`, and `ST`. When no
+head coach is present, the parser uses a stand-in or other available coach,
+then the explicit `Unknown` source fallback.
