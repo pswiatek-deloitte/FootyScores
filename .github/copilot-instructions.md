@@ -11,6 +11,15 @@ Olympic Games. The official competition schedule is the source of truth:
 Before making changes, read `task/readme.md` and `task/example.json`. Treat
 the assignment acceptance criteria as requirements, not suggestions.
 
+## Frozen task materials
+
+- Treat every file under `task/` as an immutable source-of-truth artifact.
+- Read `task/readme.md` and `task/example.json` to understand the assignment,
+  but never edit, rename, delete, reformat, or regenerate files under `task/`
+  unless the user explicitly requests that specific change.
+- Put implementation documentation in the root `readme.md`, and put tests and
+  sanitized runtime fixtures in `test/`.
+
 ## Runtime and repository layout
 
 - The implementation uses TypeScript in ESM mode on Node.js 22 or newer, with

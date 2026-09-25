@@ -9,6 +9,13 @@ compatibility: Network access is needed only when refreshing the official schedu
 Use this skill for implementation or review work related to the FootyScores
 recruitment assignment.
 
+## Immutable assignment files
+
+Treat `task/` as frozen source material. Read `task/readme.md` and
+`task/example.json` for requirements and the response shape, but do not edit,
+rename, delete, reformat, or regenerate anything under that directory unless
+the user explicitly requests a change to those files.
+
 ## Required workflow
 
 1. Read `task/readme.md` and `task/example.json`, then inspect the repository's runtime,
