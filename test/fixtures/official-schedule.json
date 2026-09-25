@@ -1,0 +1,1302 @@
+{
+  "schedules": [
+    {
+      "code": "FBLWTEAM11------------GPC-000100--",
+      "startDate": "2024-07-25T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        },
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000400--",
+      "startDate": "2024-07-27T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        },
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------QFNL000400--",
+      "startDate": "2024-08-03T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Canada"
+          }
+        },
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000300--",
+      "startDate": "2024-07-28T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        },
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------VICTMEDAL---",
+      "startDate": "2024-08-09T20:06:00+02:00",
+      "start": [],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "RESCHEDULED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------SFNL000100--",
+      "startDate": "2024-08-05T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000300--",
+      "startDate": "2024-07-27T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Israel"
+          }
+        },
+        {
+          "participant": {
+            "name": "Paraguay"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000500--",
+      "startDate": "2024-07-30T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Ukraine"
+          }
+        },
+        {
+          "participant": {
+            "name": "Argentina"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000600--",
+      "startDate": "2024-07-30T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        },
+        {
+          "participant": {
+            "name": "Guinea"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------QFNL000300--",
+      "startDate": "2024-08-03T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        },
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000300--",
+      "startDate": "2024-07-28T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Canada"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000500--",
+      "startDate": "2024-07-31T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Australia"
+          }
+        },
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000300--",
+      "startDate": "2024-07-28T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        },
+        {
+          "participant": {
+            "name": "Nigeria"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------FNL-000200--",
+      "startDate": "2024-08-08T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        },
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000200--",
+      "startDate": "2024-07-24T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Iraq"
+          }
+        },
+        {
+          "participant": {
+            "name": "Ukraine"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000200--",
+      "startDate": "2024-07-25T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Canada"
+          }
+        },
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------VICTMEDAL---",
+      "startDate": "2024-08-10T19:06:00+02:00",
+      "start": [],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "RESCHEDULED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000400--",
+      "startDate": "2024-07-27T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Mali"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000400--",
+      "startDate": "2024-07-28T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        },
+        {
+          "participant": {
+            "name": "Colombia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000500--",
+      "startDate": "2024-07-30T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Israel"
+          }
+        },
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------FNL-000100--",
+      "startDate": "2024-08-09T18:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------QFNL000300--",
+      "startDate": "2024-08-02T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        },
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------FNL-000100--",
+      "startDate": "2024-08-10T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        },
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000600--",
+      "startDate": "2024-07-31T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Colombia"
+          }
+        },
+        {
+          "participant": {
+            "name": "Canada"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------SFNL000200--",
+      "startDate": "2024-08-05T18:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------SFNL000200--",
+      "startDate": "2024-08-06T18:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        },
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000100--",
+      "startDate": "2024-07-24T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Uzbekistan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000400--",
+      "startDate": "2024-07-27T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Dominican Republic"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------QFNL000100--",
+      "startDate": "2024-08-03T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000300--",
+      "startDate": "2024-07-27T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Argentina"
+          }
+        },
+        {
+          "participant": {
+            "name": "Iraq"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000400--",
+      "startDate": "2024-07-27T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Ukraine"
+          }
+        },
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000600--",
+      "startDate": "2024-07-31T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Nigeria"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000600--",
+      "startDate": "2024-07-31T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Zambia"
+          }
+        },
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------SFNL000100--",
+      "startDate": "2024-08-06T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000100--",
+      "startDate": "2024-07-24T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Mali"
+          }
+        },
+        {
+          "participant": {
+            "name": "Israel"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000300--",
+      "startDate": "2024-07-27T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Uzbekistan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000600--",
+      "startDate": "2024-07-30T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        },
+        {
+          "participant": {
+            "name": "Iraq"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000200--",
+      "startDate": "2024-07-25T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        },
+        {
+          "participant": {
+            "name": "Australia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPB-000100--",
+      "startDate": "2024-07-24T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Argentina"
+          }
+        },
+        {
+          "participant": {
+            "name": "Morocco"
+          }
+        }
+      ],
+      "location": {
+        "description": "Geoffroy-Guichard, St-Etienne"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000400--",
+      "startDate": "2024-07-28T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        },
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------QFNL000200--",
+      "startDate": "2024-08-03T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        },
+        {
+          "participant": {
+            "name": "Colombia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000500--",
+      "startDate": "2024-07-30T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Dominican Republic"
+          }
+        },
+        {
+          "participant": {
+            "name": "Uzbekistan"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------QFNL000400--",
+      "startDate": "2024-08-02T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000100--",
+      "startDate": "2024-07-25T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Colombia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPA-000500--",
+      "startDate": "2024-07-31T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        },
+        {
+          "participant": {
+            "name": "France"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000600--",
+      "startDate": "2024-07-30T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Paraguay"
+          }
+        },
+        {
+          "participant": {
+            "name": "Mali"
+          }
+        }
+      ],
+      "location": {
+        "description": "Parc des Princes, Paris"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000400--",
+      "startDate": "2024-07-28T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Australia"
+          }
+        },
+        {
+          "participant": {
+            "name": "Zambia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000500--",
+      "startDate": "2024-07-30T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        },
+        {
+          "participant": {
+            "name": "France"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------QFNL000100--",
+      "startDate": "2024-08-02T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Argentina"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000200--",
+      "startDate": "2024-07-24T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Guinea"
+          }
+        },
+        {
+          "participant": {
+            "name": "New Zealand"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPD-000200--",
+      "startDate": "2024-07-24T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Japan"
+          }
+        },
+        {
+          "participant": {
+            "name": "Paraguay"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000600--",
+      "startDate": "2024-07-30T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        },
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPC-000200--",
+      "startDate": "2024-07-24T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        },
+        {
+          "participant": {
+            "name": "Dominican Republic"
+          }
+        }
+      ],
+      "location": {
+        "description": "La Beaujoire Stadium, Nantes"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000200--",
+      "startDate": "2024-07-25T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Nigeria"
+          }
+        },
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPC-000500--",
+      "startDate": "2024-07-31T17:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Brazil"
+          }
+        },
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        }
+      ],
+      "location": {
+        "description": "Bordeaux Stadium, Bordeaux"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000100--",
+      "startDate": "2024-07-24T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------QFNL000200--",
+      "startDate": "2024-08-02T19:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Egypt"
+          }
+        },
+        {
+          "participant": {
+            "name": "Paraguay"
+          }
+        }
+      ],
+      "location": {
+        "description": "Marseille Stadium, Marseille"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------FNL-000200--",
+      "startDate": "2024-08-09T15:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "Spain"
+          }
+        },
+        {
+          "participant": {
+            "name": "Germany"
+          }
+        }
+      ],
+      "location": {
+        "description": "Lyon Stadium, Lyon"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLMTEAM11------------GPA-000300--",
+      "startDate": "2024-07-27T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "France"
+          }
+        },
+        {
+          "participant": {
+            "name": "Guinea"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    },
+    {
+      "code": "FBLWTEAM11------------GPB-000100--",
+      "startDate": "2024-07-25T21:00:00+02:00",
+      "start": [
+        {
+          "participant": {
+            "name": "United States of America"
+          }
+        },
+        {
+          "participant": {
+            "name": "Zambia"
+          }
+        }
+      ],
+      "location": {
+        "description": "Nice Stadium, Nice"
+      },
+      "status": {
+        "code": "FINISHED"
+      }
+    }
+  ]
+}

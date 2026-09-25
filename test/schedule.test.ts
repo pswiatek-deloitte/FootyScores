@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import officialScheduleFixture from "./fixtures/official-schedule.json" with { type: "json" };
 import fixture from "./fixtures/schedule.json" with { type: "json" };
 import { generateEndpoint } from "../src/endpoint.js";
 import { parseSchedulePayload } from "../src/source/olympic-schedule.js";
@@ -16,6 +17,24 @@ describe("Olympic schedule normalization", () => {
       "/api/matches/paris-2024/2024-07-25-1700/spain-vs-japan",
       "/api/matches/paris-2024/2024-07-25-1600/united-states-vs-germany",
     ]);
+  });
+
+  it("covers the complete official football schedule snapshot", () => {
+    const matches = parseSchedulePayload(officialScheduleFixture);
+    const matchCodes = matches.map((match) => match.code);
+
+    expect(matches).toHaveLength(58);
+    expect(new Set(matchCodes).size).toBe(58);
+    expect(
+      matches.filter((match) => match.code.startsWith("FBLM")),
+    ).toHaveLength(32);
+    expect(
+      matches.filter((match) => match.code.startsWith("FBLW")),
+    ).toHaveLength(26);
+    expect(matchCodes.some((code) => code.includes("VICTMEDAL"))).toBe(false);
+    expect(new Set(matches.map((match) => generateEndpoint(match))).size).toBe(
+      58,
+    );
   });
 
   it("requires timezone-aware kickoff values", () => {

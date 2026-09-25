@@ -202,6 +202,13 @@ node dist/cli.js --input test/fixtures/schedule.json --format json
 The fixture contains men's and women's football, a non-football record, a
 placeholder, an exact duplicate, and timezone variations.
 
+The repository also contains a sanitized snapshot of the official football
+schedule at `test/fixtures/official-schedule.json`. It was retrieved from the
+official football feed on 2026-09-25 and is used only for offline coverage
+verification. The coverage test asserts 58 unique playable matches: 32 men's
+and 26 women's matches. The two source placeholder rows are intentionally
+retained in the snapshot and excluded by the parser.
+
 Run the repeatable fixture smoke check:
 
 ```bash
