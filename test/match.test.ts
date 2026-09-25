@@ -83,6 +83,54 @@ describe("Olympic match normalization", () => {
       ],
     });
     expect(match.lineups.home.startingXI[0]).not.toHaveProperty("starting");
+
+    expect(Object.keys(match).sort()).toEqual(
+      [
+        "competition",
+        "venue",
+        "kickoff",
+        "status",
+        "teams",
+        "score",
+        "scorers",
+        "lineups",
+      ].sort(),
+    );
+    expect(Object.keys(match.competition).sort()).toEqual(
+      ["name", "season", "round"].sort(),
+    );
+    expect(Object.keys(match.venue).sort()).toEqual(["name", "city"].sort());
+    expect(Object.keys(match.teams).sort()).toEqual(["home", "away"].sort());
+    expect(Object.keys(match.score).sort()).toEqual(
+      ["home", "away", "halfTime"].sort(),
+    );
+    expect(Object.keys(match.score.halfTime).sort()).toEqual(
+      ["home", "away"].sort(),
+    );
+    expect(Object.keys(match.lineups).sort()).toEqual(["home", "away"].sort());
+
+    for (const lineup of [match.lineups.home, match.lineups.away]) {
+      expect(Object.keys(lineup).sort()).toEqual(
+        ["team", "formation", "coach", "startingXI", "bench"].sort(),
+      );
+
+      for (const player of [...lineup.startingXI, ...lineup.bench]) {
+        expect(Object.keys(player).sort()).toEqual(
+          ["name", "number", "position"].sort(),
+        );
+      }
+    }
+
+    for (const scorer of match.scorers) {
+      const keys = Object.keys(scorer).sort();
+      const withoutAssist = ["team", "player", "minute", "type"].sort();
+      const withAssist = ["team", "player", "minute", "assist", "type"].sort();
+
+      expect(
+        JSON.stringify(keys) === JSON.stringify(withoutAssist) ||
+          JSON.stringify(keys) === JSON.stringify(withAssist),
+      ).toBe(true);
+    }
   });
 
   it("normalizes shootout goals to a stable minute", () => {

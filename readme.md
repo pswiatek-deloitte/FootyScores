@@ -56,6 +56,7 @@ npm versions forward command-line arguments.
 | `node dist/cli.js --details --format json` | Generate detailed match references |
 | `node dist/cli.js --source <url>` | Read the schedule from another JSON URL |
 | `node dist/cli.js --input <path>` | Read a local schedule JSON fixture |
+| `node dist/cli.js --match-code <code>` | Generate output for one stable match code |
 | `node dist/cli.js --help` | Display command usage |
 | `node dist/cli.js --version` | Display the package version |
 
@@ -81,6 +82,19 @@ Keep diagnostics separate when running from a scheduled job:
 ```bash
 node dist/cli.js > endpoints.txt 2> errors.txt
 ```
+
+### Generate one selected match
+
+Use the stable Olympic match code when a QA check needs only one reference:
+
+```bash
+node dist/cli.js --match-code FBLMTEAM11------------GPB-000100--
+```
+
+The selector can be combined with `--format json` or
+`--details --format json`. The output keeps the same array or line-oriented
+contract as a full export, containing exactly one result. An unknown match code
+is an error and returns a non-zero exit code.
 
 ## Endpoint contract
 

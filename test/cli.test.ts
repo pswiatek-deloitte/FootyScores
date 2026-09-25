@@ -57,6 +57,70 @@ describe("CLI", () => {
     );
   });
 
+  it("produces byte-identical output for repeated runs", async () => {
+    const fixturePath = fileURLToPath(
+      new URL("./fixtures/schedule.json", import.meta.url),
+    );
+    const first = createOutput();
+    const second = createOutput();
+
+    const firstExitCode = await run(
+      ["--input", fixturePath],
+      first.output,
+      createOutput().output,
+    );
+    const secondExitCode = await run(
+      ["--input", fixturePath],
+      second.output,
+      createOutput().output,
+    );
+
+    expect(firstExitCode).toBe(0);
+    expect(secondExitCode).toBe(0);
+    expect(second.read()).toBe(first.read());
+  });
+
+  it("selects one match by its stable Olympic match code", async () => {
+    const stdout = createOutput();
+    const fixturePath = fileURLToPath(
+      new URL("./fixtures/schedule.json", import.meta.url),
+    );
+
+    const exitCode = await run(
+      [
+        "--input",
+        fixturePath,
+        "--match-code",
+        "FBLMTEAM11------------GPA-000400--",
+      ],
+      stdout.output,
+      createOutput().output,
+    );
+
+    expect(exitCode).toBe(0);
+    expect(stdout.read()).toBe(
+      "/api/matches/paris-2024/2024-07-25-1600/united-states-vs-germany\n",
+    );
+  });
+
+  it("fails when a selected match code is not in the schedule", async () => {
+    const stderr = createOutput();
+    const fixturePath = fileURLToPath(
+      new URL("./fixtures/schedule.json", import.meta.url),
+    );
+
+    const exitCode = await run(
+      ["--input", fixturePath, "--match-code", "FBLMUNKNOWN------------"],
+      createOutput().output,
+      stderr.output,
+    );
+
+    expect(exitCode).toBe(1);
+    expect(stderr.read()).toContain(
+      'No football match found for match code "FBLMUNKNOWN------------"',
+    );
+  });
+
   it("rejects unsupported arguments with a non-zero exit code", async () => {
     const stdout = createOutput();
     const stderr = createOutput();

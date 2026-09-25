@@ -1,6 +1,7 @@
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import packageJson from "../package.json" with { type: "json" };
+import type { MatchMetadata } from "./domain/match.js";
 import { generateEndpoint } from "./endpoint.js";
 import {
   OFFICIAL_FOOTBALL_SCHEDULE_URL,
@@ -19,6 +20,8 @@ const usage = `Usage: footyscores [options]
 Options:
   --input <path>   Read schedule JSON from a local file instead of the official source
   --source <url>   Override the official schedule JSON URL
+  --match-code <code>
+                   Limit output to one stable Olympic match code
   --format <type>  Output "lines" (default) or "json"
   --details        Fetch full match data and output JSON references
   -h, --help       Show this help message
@@ -28,6 +31,7 @@ Options:
 interface CliOptions {
   readonly inputPath: string | undefined;
   readonly sourceUrl: string;
+  readonly matchCode: string | undefined;
   readonly format: "lines" | "json";
   readonly details: boolean;
 }
@@ -67,7 +71,10 @@ export async function run(
       command.options.inputPath === undefined
         ? await fetchSchedulePayload(command.options.sourceUrl, fetchImpl)
         : await readSchedulePayload(command.options.inputPath);
-    const matches = parseSchedulePayload(payload);
+    const matches = selectMatches(
+      parseSchedulePayload(payload),
+      command.options.matchCode,
+    );
 
     if (command.options.details) {
       const references = await fetchMatchReferences(matches, fetchImpl);
@@ -102,6 +109,7 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
   let inputPath: string | undefined;
   let sourceUrl = OFFICIAL_FOOTBALL_SCHEDULE_URL;
   let sourceWasProvided = false;
+  let matchCode: string | undefined;
   let format: CliOptions["format"] = "lines";
   let details = false;
 
@@ -114,6 +122,9 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
     } else if (argument === "--source") {
       sourceUrl = requiredArgument(argv, index, "--source");
       sourceWasProvided = true;
+      index += 1;
+    } else if (argument === "--match-code") {
+      matchCode = requiredArgument(argv, index, "--match-code");
       index += 1;
     } else if (argument === "--format") {
       const value = requiredArgument(argv, index, "--format");
@@ -146,6 +157,7 @@ function parseArguments(argv: readonly string[]): ParsedCommand {
     options: {
       inputPath,
       sourceUrl,
+      matchCode,
       format,
       details,
     },
@@ -159,11 +171,32 @@ function requiredArgument(
 ): string {
   const value = argv[index + 1];
 
-  if (value === undefined || value.startsWith("--")) {
+  if (
+    value === undefined ||
+    value.startsWith("--") ||
+    value.trim().length === 0
+  ) {
     throw new CliUsageError(`${option} requires a value`);
   }
 
   return value;
+}
+
+function selectMatches(
+  matches: readonly MatchMetadata[],
+  matchCode: string | undefined,
+): MatchMetadata[] {
+  if (matchCode === undefined) {
+    return [...matches];
+  }
+
+  const selected = matches.find((match) => match.code === matchCode);
+
+  if (selected === undefined) {
+    throw new Error(`No football match found for match code "${matchCode}"`);
+  }
+
+  return [selected];
 }
 
 function errorMessage(error: unknown): string {
