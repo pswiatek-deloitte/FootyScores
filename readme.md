@@ -61,6 +61,7 @@ npm run --silent dev
 npm run test:watch
 npm run build
 node dist/cli.js
+npm run smoke
 ```
 
 Source code belongs in `src/`, tests belong in `test/`, and generated files are
@@ -100,6 +101,19 @@ kickoff, then by the stable Olympic match code. Non-football records,
 placeholder schedule rows without two participants, and exact duplicate
 records are excluded. Conflicting duplicates fail loudly instead of producing
 ambiguous endpoints.
+
+The offline fixture smoke check reports the input, accepted, excluded,
+duplicate, invalid, and unique-endpoint counts without using the network:
+
+```bash
+npm run --silent smoke
+```
+
+The checked-in fixture intentionally reports 5 input records, 2 accepted
+football matches, 2 excluded records, 1 exact duplicate, 0 invalid records,
+and 2 unique endpoints. It is a repeatable sanity check for the filtering and
+deduplication contract; the official live schedule currently contains 58
+unique football matches.
 
 ## Detailed reference export
 
@@ -153,3 +167,39 @@ shootout events use minute `120`. Lineup position subcodes are normalized to
 common labels such as `GK`, `RB`, `CB`, `LB`, `CM`, `LW`, and `ST`. When no
 head coach is present, the parser uses a stand-in or other available coach,
 then the explicit `Unknown` source fallback.
+
+## Deployment and data refresh
+
+This project is a batch CLI rather than a long-running web service. Deploy it
+to any machine or container with Node.js 22 or newer:
+
+```bash
+npm ci
+npm run build
+npm ci --omit=dev
+node dist/cli.js > endpoints.txt
+```
+
+For a detailed reference export, run:
+
+```bash
+node dist/cli.js --details --format json > references.json
+```
+
+Keep `dist/`, `package.json`, and `package-lock.json` in the deployed artifact.
+The endpoint stream is written to standard output; errors and diagnostics are
+written to standard error, so scheduled jobs can redirect the two streams
+independently. No credentials or server-side configuration are required.
+
+To refresh or validate against the official source, run the live commands from
+the repository root:
+
+```bash
+npm run --silent generate
+npm run --silent generate:details > references.json
+npm run --silent smoke
+```
+
+The live commands intentionally do not rewrite checked-in fixtures. Review and
+sanitize any refreshed data before committing it, and record the official
+schedule URL and retrieval date in the change description.

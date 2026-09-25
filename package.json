@@ -19,6 +19,7 @@
     "generate": "tsx src/cli.ts",
     "generate:json": "tsx src/cli.ts --format json",
     "generate:details": "tsx src/cli.ts --details --format json",
+    "smoke": "tsx src/smoke.ts",
     "start": "node dist/cli.js",
     "test": "vitest run",
     "test:watch": "vitest",
